@@ -1,0 +1,109 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'inst|altpll_component|pll|clk[0]'
+Slack : -13.281
+TNS   : -987.392
+
+Type  : Slow Model Setup 'key1'
+Slack : -3.738
+TNS   : -39.729
+
+Type  : Slow Model Setup 'div_freq:inst3|freq_onehz'
+Slack : -3.387
+TNS   : -87.302
+
+Type  : Slow Model Setup 'key2'
+Slack : -2.671
+TNS   : -16.051
+
+Type  : Slow Model Hold 'inst|altpll_component|pll|clk[0]'
+Slack : 0.301
+TNS   : 0.000
+
+Type  : Slow Model Hold 'div_freq:inst3|freq_onehz'
+Slack : 0.629
+TNS   : 0.000
+
+Type  : Slow Model Hold 'key1'
+Slack : 0.979
+TNS   : 0.000
+
+Type  : Slow Model Hold 'key2'
+Slack : 1.774
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'key1'
+Slack : -1.469
+TNS   : -18.577
+
+Type  : Slow Model Minimum Pulse Width 'key2'
+Slack : -1.469
+TNS   : -10.023
+
+Type  : Slow Model Minimum Pulse Width 'div_freq:inst3|freq_onehz'
+Slack : -0.611
+TNS   : -47.658
+
+Type  : Slow Model Minimum Pulse Width 'inst|altpll_component|pll|clk[0]'
+Slack : 5.139
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'Clock'
+Slack : 10.000
+TNS   : 0.000
+
+Type  : Fast Model Setup 'inst|altpll_component|pll|clk[0]'
+Slack : -5.588
+TNS   : -432.763
+
+Type  : Fast Model Setup 'key1'
+Slack : -0.863
+TNS   : -7.629
+
+Type  : Fast Model Setup 'div_freq:inst3|freq_onehz'
+Slack : -0.841
+TNS   : -15.141
+
+Type  : Fast Model Setup 'key2'
+Slack : -0.376
+TNS   : -2.008
+
+Type  : Fast Model Hold 'inst|altpll_component|pll|clk[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'div_freq:inst3|freq_onehz'
+Slack : 0.243
+TNS   : 0.000
+
+Type  : Fast Model Hold 'key1'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Fast Model Hold 'key2'
+Slack : 0.652
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'key1'
+Slack : -1.222
+TNS   : -15.222
+
+Type  : Fast Model Minimum Pulse Width 'key2'
+Slack : -1.222
+TNS   : -8.222
+
+Type  : Fast Model Minimum Pulse Width 'div_freq:inst3|freq_onehz'
+Slack : -0.500
+TNS   : -39.000
+
+Type  : Fast Model Minimum Pulse Width 'inst|altpll_component|pll|clk[0]'
+Slack : 5.250
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'Clock'
+Slack : 10.000
+TNS   : 0.000
+
+------------------------------------------------------------

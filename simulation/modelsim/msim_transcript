@@ -1,0 +1,63 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do PWM_DeadTime_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {PWM_DeadTime_fast.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Loading package cycloneii_components
+# -- Compiling entity PWM_DeadTime
+# -- Compiling architecture structure of PWM_DeadTime
+# 
+vsim work.pwm_deadtime
+# vsim work.pwm_deadtime 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.pwm_deadtime(structure)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_pllpack(body)
+# Loading cycloneii.cycloneii_pll(vital_pll)
+# Loading cycloneii.cycloneii_m_cntr(behave)
+# Loading cycloneii.cycloneii_n_cntr(behave)
+# Loading cycloneii.cycloneii_scale_cntr(behave)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# ** Warning: Design size of 2 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+add wave -position insertpoint  \
+sim:/pwm_deadtime/pwm \
+sim:/pwm_deadtime/Clock \
+sim:/pwm_deadtime/pwm2
+force -freeze sim:/pwm_deadtime/Clock 1 0, 0 {10000 ps} -r {20ns}
+run
+# ** Note: CycloneII PLL is enabled
+#    Time: 0 ps  Iteration: 1  Instance: /pwm_deadtime/\inst|altpll_component|pll\
+# ** Note: CycloneII PLL locked to incoming clock
+#    Time: 80 ns  Iteration: 0  Instance: /pwm_deadtime/\inst|altpll_component|pll\

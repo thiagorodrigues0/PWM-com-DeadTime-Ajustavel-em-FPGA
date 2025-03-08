@@ -1,0 +1,156 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity DeadTime is
+	port(clk: in std_logic;
+		  pwm_in: in std_logic;
+		  pwm_out: out std_logic);
+
+end entity;
+
+architecture main of DeadTime is
+	signal clk_aux, clk_aux2: std_logic :='0';				-- clock auxiliar, habilitado ou ativar gatilho
+	signal dt_var: integer range 1 to 50:=4;					-- Define tamanho do deadtime	
+	signal pwm_s1: std_logic := '0';								-- pwm in com defasagem +dt_var
+	signal pwm_s2: std_logic := '0';								-- pwm in com defasagem -dt_var
+	signal pwm_data, pwm_data2, pwm_old: std_logic:='0';	-- salva o dado anterior de pwm in
+	signal gatilho, gatilho2: std_logic:='0';					-- gatilhos para defasar o pwm in
+	signal start: std_logic:='0';									-- Sinaliza o começo do pwm out após os primeiros periodos
+	signal gatilho_desativar, gatilho_desativar2: std_logic:='0';	-- Variáveis auxiliares
+	signal contador1, contador2: integer range 0 to 65535:=0;	-- Armazena o Tempo em nível baixo e Periodo respectivamente de pwm_in
+
+begin
+	
+	-- Habilitação clock: defasagem atrasada
+	process(pwm_in, gatilho_desativar)
+		variable estouro: std_logic:='0';
+	begin
+		if gatilho_desativar='1' and estouro='0' then
+			estouro:='1';
+			gatilho <= '0';
+		elsif gatilho_desativar='0' and estouro='1' then
+			estouro:='0';
+		else
+			gatilho <= '1';
+		end if;
+	end process;
+	
+	WITH gatilho SELECT
+	clk_aux <= '0' when '0',
+				  clk when others;
+				  
+	-- defasagem atrasada
+	process (clk_aux)
+		variable cont: integer range 0 to 50:=0;
+	begin
+		if clk_aux'event and clk_aux='1' then
+			if cont=dt_var then
+				pwm_s1 <= pwm_data;
+				cont:=0;
+				gatilho_desativar <= '1';
+			elsif cont=0 then
+				pwm_data<= pwm_in;
+				gatilho_desativar <= '0';
+				cont := cont+1;
+			else
+				gatilho_desativar <= '0';
+				cont := cont+1;
+			end if;			
+		end if;		
+	end process;
+	
+	process (clk)
+		variable cont1, cont2: integer range 0 to 65535:=0;
+		variable var1: std_logic:='0';
+		variable amostragem: integer range 1 to 10:=1; -- amostra a frequência a cada 10 períodos
+		variable estouro: std_logic:='0';
+	begin
+		if var1='0' then
+			var1:='1';
+			pwm_old<=pwm_in;
+		elsif	estouro='0' and pwm_old='1' and pwm_in='0' and amostragem=1 then
+			estouro:='1';
+			amostragem:=amostragem+1;
+			pwm_old<=pwm_in;
+			cont1:= cont1+1;
+			cont2:= cont2+1;
+		elsif	estouro='0' and pwm_old='1' and pwm_in='0' and amostragem>1 then
+			if amostragem=10 then
+				amostragem:=1;
+			else
+				amostragem:=amostragem+1;
+			end if;
+			pwm_old<=pwm_in;
+		elsif estouro='1' and pwm_old='0' and pwm_in='0' then
+			cont1:= cont1+1;
+			cont2:= cont2+1;
+			pwm_old<=pwm_in;
+		elsif estouro='1' and pwm_old='0' and pwm_in='1' then
+			contador1<=cont1;
+			cont2:= cont2+1;
+			pwm_old<=pwm_in;
+		elsif estouro='1' and pwm_old='1' and pwm_in='1' then
+			cont1:=0;
+			cont2:= cont2+1;
+			pwm_old<=pwm_in;
+		elsif estouro='1' and pwm_old='1' and pwm_in='0' then
+			contador2<=cont2;
+			pwm_old<=pwm_in;
+			estouro:='0';
+			cont2:=0;
+			start<='1';
+		else
+			pwm_old<=pwm_in;
+		end if;
+	end process;
+	
+	-- Habilitação clock: defasagem adiantada
+	process(pwm_in, gatilho_desativar2)
+		variable estouro: std_logic:='0';
+	begin
+		if start='1' then
+			if gatilho_desativar2='1' and estouro='0' then
+				estouro:='1';
+				gatilho2 <= '0';
+			elsif gatilho_desativar2='0' and estouro='1' then
+				estouro:='0';
+			elsif pwm_in'event and pwm_in='0' then
+				gatilho2 <= '1';
+			end if;
+		end if;
+	end process;
+	
+	WITH gatilho2 SELECT
+	clk_aux2 <= '0' when '0',
+				   clk when others;
+				  
+	-- defasagem adiantada
+	process (clk_aux2)
+		variable cont: integer range 0 to 32767:=0;
+	begin
+		if clk_aux2'event and clk_aux2='1' then
+			if cont=((contador2/2)-dt_var) then
+				pwm_s2 <= pwm_data2;
+				cont:=0;
+				gatilho_desativar2 <= '1';
+			elsif cont=((contador1/2)-dt_var) then
+				pwm_s2 <= not pwm_data2;
+				cont := cont+1;
+			elsif cont=0 then
+				pwm_data2<= pwm_in;
+				gatilho_desativar2 <= '0';
+				cont := cont+1;
+			else
+				gatilho_desativar2 <= '0';
+				cont := cont+1;
+			end if;
+		end if;
+	end process;
+		
+	-- Lógica saida pwm 
+	WITH pwm_s1 SELECT -- Seletor saída pwm
+	pwm_out <= pwm_s2 when '0',
+				  pwm_s1 when others;
+	
+end main;

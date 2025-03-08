@@ -1,0 +1,205 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\thiag\OneDrive\햞ea de Trabalho\IC Work\Projeto\Trabalho Completo\PWM_DeadTime\simulation\modelsim
+Ecomparador
+Z1 w1720149205
+Z2 dC:\Users\thiag\OneDrive\햞ea de Trabalho\IC Work\Projeto\Trabalho Completo\PWM_DeadTime\simulation\modelsim
+Z3 8C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/comparador.vhd
+Z4 FC:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/comparador.vhd
+l0
+L1
+VUNO`NBWCF27<8@`fC]cg?3
+!s100 1U8YRGX1MjUd6_>FPfcR40
+Z5 OV;C;10.1d;51
+31
+!i10b 1
+Z6 !s108 1720149542.345000
+Z7 !s90 -reportprogress|300|-93|-work|work|C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/comparador.vhd|
+Z8 !s107 C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/comparador.vhd|
+Z9 o-93 -work work -O0
+Z10 tExplicit 1
+Atest
+DEx4 work 10 comparador 0 22 UNO`NBWCF27<8@`fC]cg?3
+l9
+L7
+VUf60Z[>5mVLVz^mKDcCLo1
+!s100 ZNW;b2VbY[O8RJf85Mm>g1
+R5
+31
+!i10b 1
+R6
+R7
+R8
+R9
+R10
+Edeadtime
+Z11 w1720137436
+Z12 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z13 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z14 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R2
+Z15 8C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/DeadTime.vhd
+Z16 FC:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/DeadTime.vhd
+l0
+L5
+VKd[l1k@lWW]Z6^H<cX3Pl2
+R5
+31
+Z17 !s108 1720149542.165000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/DeadTime.vhd|
+Z19 !s107 C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/DeadTime.vhd|
+R9
+R10
+!s100 ggh[lh0danMBD>?W_I:QQ2
+!i10b 1
+Amain
+R12
+R13
+R14
+DEx4 work 8 deadtime 0 22 Kd[l1k@lWW]Z6^H<cX3Pl2
+l24
+L13
+VX^06URmWao?QZmI:CQPNo3
+R5
+31
+R17
+R18
+R19
+R9
+R10
+!s100 8go5g?V^RWnE24dZ5^[443
+!i10b 1
+Ediv_freq
+Z20 w1720115007
+R2
+Z21 8C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/div_freq.vhd
+Z22 FC:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/div_freq.vhd
+l0
+L1
+VP>5f>`YnIkm6R^=G34O4>2
+R5
+31
+Z23 !s108 1720149541.704000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/div_freq.vhd|
+Z25 !s107 C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/div_freq.vhd|
+R9
+R10
+!s100 `kn=kU<ZUU_Toz]JeZiQo2
+!i10b 1
+Atest
+DEx4 work 8 div_freq 0 22 P>5f>`YnIkm6R^=G34O4>2
+l8
+L6
+V=CUePQmeIRzK0d8NQZ_zJ2
+R5
+31
+R23
+R24
+R25
+R9
+R10
+!s100 =3Y1P7QSQZ?c@O64B@9Q;2
+!i10b 1
+Emoduladora
+Z26 w1720118811
+R13
+R14
+R2
+Z27 8C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/moduladora.vhd
+Z28 FC:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/moduladora.vhd
+l0
+L4
+V<76Dc1KgkN?dX6CFXZ70d1
+R5
+31
+Z29 !s108 1720149542.044000
+Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/moduladora.vhd|
+Z31 !s107 C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/moduladora.vhd|
+R9
+R10
+!s100 C[zXDzz^<9JWkWRg0fY6Q3
+!i10b 1
+Atest
+R13
+R14
+DEx4 work 10 moduladora 0 22 <76Dc1KgkN?dX6CFXZ70d1
+l11
+L9
+VzRo`ejZaeW@B@>]?WaC601
+R5
+31
+R29
+R30
+R31
+R9
+R10
+!s100 QU66KWm6mkdz5EV=1NC0P2
+!i10b 1
+Epllfunction
+Z32 w1720114938
+R13
+R14
+R2
+Z33 8C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/pllfunction.vhd
+Z34 FC:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/pllfunction.vhd
+l0
+L42
+V2ZDZMc`YYQWW:cX^IT^_P1
+R5
+31
+Z35 !s108 1720149541.914000
+Z36 !s90 -reportprogress|300|-93|-work|work|C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/pllfunction.vhd|
+Z37 !s107 C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/pllfunction.vhd|
+R9
+R10
+!s100 QXnXY1Hn8_o>;KR7m^`EN2
+!i10b 1
+Asyn
+R13
+R14
+DEx4 work 11 pllfunction 0 22 2ZDZMc`YYQWW:cX^IT^_P1
+l122
+L51
+Vl]UNDdUi]:`<?nVT08H:33
+R5
+31
+R35
+R36
+R37
+R9
+R10
+!s100 EZzEg0SV6J7=<9666<YW91
+!i10b 1
+Eportadora
+Z38 w1715706105
+R2
+Z39 8C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/portadora.vhd
+Z40 FC:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/portadora.vhd
+l0
+L1
+V>GMTcngRfMYc?_^Km?zQc1
+R5
+31
+Z41 !s108 1720149541.814000
+Z42 !s90 -reportprogress|300|-93|-work|work|C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/portadora.vhd|
+Z43 !s107 C:/Users/thiag/OneDrive/햞ea de Trabalho/IC Work/Projeto/Trabalho Completo/PWM_DeadTime/portadora.vhd|
+R9
+R10
+!s100 A8gUz@5Ak8i5NI1oGRXP90
+!i10b 1
+Atest
+DEx4 work 9 portadora 0 22 >GMTcngRfMYc?_^Km?zQc1
+l8
+L6
+VzEzgDIRlU1Wg^CWJi7nDA1
+R5
+31
+R41
+R42
+R43
+R9
+R10
+!s100 LFld<bCQP]k0YjHMVFFdW2
+!i10b 1
